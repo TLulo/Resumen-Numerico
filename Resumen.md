@@ -576,6 +576,6 @@ $\int_a^b f(x)dx \approx f(\frac{a+b}{2})h$
 |Regla|Puntos|Formula|Error|Precision|
 |-|-|-|-|-|
 |Rectangulo|1|$f(a)(b-a)$|$\frac{(b-a)^2}{2}f^{(')}(\epsilon)$|0|
-|Punto Medio|1|$f(\frac{a+b}{2}(b-a))$|\frac{(b-a)^3}{24}f^{('')}(\epsilon)|1|
-|Trapecio|2|\frac{(b-a)}{2}[f(a) + f(b)]|-\frac{(b-a)^3}{12}(\epsilon)|1|
-|Simpson|3|$\frac{b-a}{6} [f(a)+4f(\frac{a+b}{2})+f(b)]$|-\frac{(\frac{(b-a)}{2})^5}{90}f^{4}(\epsilon)|3|
+|Punto Medio|1|$f(\frac{a+b}{2}(b-a))$|$\frac{(b-a)^3}{24}f^{('')}(\epsilon)$|1|
+|Trapecio|2|$\frac{(b-a)}{2}[f(a) + f(b)]$|$-\frac{(b-a)^3}{12}(\epsilon)$|1|
+|Simpson|3|$\frac{b-a}{6} [f(a)+4f(\frac{a+b}{2})+f(b)]$|$-\frac{(\frac{(b-a)}{2})^5}{90}f^{4}(\epsilon)$|3|
