@@ -579,3 +579,82 @@ $\int_a^b f(x)dx \approx f(\frac{a+b}{2})h$
 |Punto Medio|1|$f(\frac{a+b}{2}(b-a))$|$\frac{(b-a)^3}{24}f''(\epsilon)$|1|
 |Trapecio|2|$\frac{(b-a)}{2}[f(a) + f(b)]$|$-\frac{(b-a)^3}{12}f''(\epsilon)$|1|
 |Simpson|3|$\frac{b-a}{6} [f(a)+4f(\frac{a+b}{2})+f(b)]$|$-\frac{(\frac{(b-a)}{2})^5}{90}f^4(\epsilon)$|3|
+
+## Reglas compuestas
+La idea es particionar el intervalo de integracion y usar reglas simples.
+Una forma es particionar con $x_j$ equidistantes
+- $\frac{b-a}{n}$
+- $x_j = a + jh$ con $j= 0,...,n$
+
+### Regla compuesta de simpson
+#### Teorema
+Sea
+- $f \in C^4 [a,b]$
+- $n$ par
+- $h = \frac{(b-a)}{n}$
+- $x_j = a + jh$ para $j = 1,...,n$
+
+Entonces
+- $\exists \mu \in (a,b)$ donde la regla compuesta para $n$ subintervalos esta dada por
+    - $\int_a^b f(x)dx = \frac{h}{3}[f(x_0) + 2 \sum_{j=1}^{(\frac{n}{2})-1} f(x_{2j}) + 4 \sum_{j=1}^{\frac{n}{2}} f(x_{2j-1}) + f(x_n)] - \frac{(b-a)}{180} h^4f^4(\mu)$
+    - donde el error es la ultima diferencia
+
+### Regla compuesta del trapecio
+#### Teorema
+Sea
+- $f \in C^2 [a,b]$
+- $n \in \Z$ positivo
+- $h = \frac{(b-a)}{n}$
+- $x_j = a + jh$ para $j = 1,...,n$
+
+Entonces
+- $\exists \mu \in (a,b)$ donde la regla compuesta para $n$ subintervalos esta dada por
+    - $\int_a^b f(x)dx = \frac{h}{2}[f(a) + 2 \sum_{j=1}^{n-1} f(x_j) + f(b)] - \frac{(b-a)}{12}h^2f''(\mu)$
+    - donde el error es la ultima diferencia
+
+### Regla compuesta del punto medio
+#### Teorema
+Sea
+- $f \in C^2 [a,b]$
+- $n$ un numero par
+- $h = \frac{(b-a)}{n+2}$
+- $x_j = a + (j+1)h$ para $j = 1,...,n+1$
+
+Entonces
+- $\exists \mu \in (a,b)$ donde la regla compuesta para $n+2$ subintervalos esta dada por
+    - $\int_a^b f(x)dx = 2h \sum_{j=0}^{\frac{n}{2}}f(x_{2j}) + \frac{(b-a)}{6}h^2f''(\mu)$
+    - donde el error es la ultima diferencia
+
+### Regla compuesta del rectangulo
+#### Teorema
+Sea
+- $f \in C^1 [a,b]$
+- $n \in \Z$ positivo
+- $h = \frac{(b-a)}{n}$
+- $x_j = a + jh$ para $j = 1,...,n$
+
+Entonces
+- $\exists \mu \in (a,b)$ donde la regla compuesta para $n$ subintervalos esta dada por
+    - $\int_a^b f(x)dx = h \sum_{j=0}^{n-1}f(x_j) + \frac{(b-a)}{2}hf'(\mu)$
+
+### Resumen reglas compuestas
+|Regla|Formula|Error|
+|-|-|-|
+|Rectangulo|$h \sum_{j=0}^{n-1} f(x_j)$|$\frac{(b-a)^2}{2}hf'(\mu)$|
+|Punto Medio|$2h \sum_{j=0}^{n/2} f(x_{2j})$|$\frac{(b-a)}{6}h^2f''(\mu)$|
+|Trapecio|$\frac{h}{2}[f(a) + 2 \sum_{j=1}^{n-1} f(x_j) + f(b)]$|$-\frac{(b-a)}{12}h^2f''(\mu)$|
+|Simpson|$\frac{h}{3}[f(x_0) + 2 \sum_{j=1}^{(\frac{n}{2})-1} f(x_{2j}) + 4 \sum_{j=1}^{\frac{n}{2}} f(x_{2j-1}) + f(x_n)]$|$- \frac{(b-a)}{180} h^4f^4(\mu)$|
+
+## Reglas gaussianas
+
+### Teorema
+Sea 
+- $w$ una funcion peso definida en $[a,b]$
+- $q$ un polinomio no nulo de $gr(q)=n+1$ ortogonal a todo polinomio $p$, con $gr(p)<n$
+    - es decir
+        - $\int_a^b q(x)p(x)w(x) = 0$
+- $x_0,x_1,...,x_n$ las $n+1$ raices de $q$
+
+Entonces
+- $\int_a^b f(x) w(x)dx \approx \sum_{i=0}^n a_i f(x_i)$
+    - con $a_i = \int_a^b w(x) \prod_{j=0;j\neq i}^n \frac{x-x_j}{x_i - x_j}$
