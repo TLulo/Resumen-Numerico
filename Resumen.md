@@ -376,6 +376,10 @@ definimos spline de grado k como una funcion $S$ definida en $[x_0,x_n]$ que sat
 - $S$ Es un polinomio de grado $\leq k$ en cada sunintervalo $[x_i,x_{i+1}]$ con $i= 0,1,...,n-1$
 - Las derivadas $S^{(i)}$ son continuas en $[x_0,x_n]$ para $ i = 0,...,k-1 $
 
+**Spline Natural**
+- $S^{(k-1)} = S^{(0)}$ = 0 en los extremos
+    - entendi algo asi, en esto se basa el ultimo ej.
+
 #### Spline lineal
 spline con $k=1$
 
@@ -448,13 +452,13 @@ por lo que
 la aproximacion seria:
 - $A^tAx = A^tB$
 donde 
-- $A = <x,1>$
+- $A = <1,x>$
 - $X = (a,b)$
 - $B = (y_1,y_2,...,y_n)$
 
 Esto se expande agregando x al producto vectorial de A
 - ej cuadratica
-    - $A = <x^2,x,1>$
+    - $A = <1,x,x^2>$
     - $X = (a,b,c)$
     - Y = y
 
