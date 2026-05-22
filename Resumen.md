@@ -452,16 +452,22 @@ por lo que
 la aproximacion seria:
 - $A^tAx = A^tB$
 donde 
-- $A = <1,x>$
+- $A = <x,1>$
 - $X = (a,b)$
 - $B = (y_1,y_2,...,y_n)$
 
 Esto se expande agregando x al producto vectorial de A
 - ej cuadratica
-    - $A = <1,x,x^2>$
+    - $A = <x^2,x,1>$
     - $X = (a,b,c)$
     - Y = y
 
+OBS importante:
+Si se utiliza
+- $A = <1,x,x^2>$
+
+Entonces
+- - $X = (c,b,a)$
 
 ## Aproximacion continua
 anteriormente calculamos de forma discreta.
